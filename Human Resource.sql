@@ -226,3 +226,83 @@ VALUES
 
 select * from region;
 --  ---------------------------------------------------------------------------------------------------------------------------------------------- 
+show tables;
+
+select first_name as "First Name",last_name as "Last Name" from employe;
+select distinct department_id from employe;
+select * from employe
+order by first_name desc;
+
+select first_name,last_name,salary,salary*0.15 as PF;
+select employe_id,first_name,last_name ,salary
+from employe
+order by salary asc;
+
+select sum(salary)as total_Salary
+from employe;
+
+select avg(salary) as Average_Salary,count(employe_id) as number_of_employe
+from employe;
+
+select count(distinct job_id) as Availabel_Jobs
+from employe;
+
+select substring(first_name,1,3)
+from employe;
+select 171*214+625 rtesult;
+select concat(first_name ," ",last_name) as Emp_Name
+from employe;
+select trim(first_name)
+from employe;
+
+select first_name,last_name, length(first_name)+length(last_name) 'Length of Name'
+from employe;
+
+select * from employe
+where first_name regexp '[0-9]';
+
+select employe_id,first_name
+from employe
+limit 10;
+
+select first_name,last_name,job_id,salary as 'Total Salary',round(salary/12,2) as 'Monthly Salary',round(salary*0.15,2) as 'Provident Fund'
+from employe;
+
+select first_name,last_name,salary,department_id
+from employe
+where salary not between 10000 and 15000
+and department_id in (30,50); 
+
+select first_name,last_name,department_id
+from employe
+where department_id in(30,50)
+order by department_id asc;
+
+select first_name,last_name,salary
+from employe
+where salary not in ( 10000 ,15000)
+and department_id in(30,50);
+
+SELECT employe_id, first_name, last_name, job_id, salary, department_id
+FROM employe
+WHERE job_id IN ('FIN01', 'SALES02')
+  AND department_id IN (78000, 10000, 5000);
+  
+SELECT *
+FROM employe
+LIMIT 10;
+
+SELECT employe_id, first_name, last_name, job_id, salary, department_id
+FROM employe
+WHERE job_id IN ('FIN01', 'SALES02');
+
+select substring(last_name,1,6) as '6'
+from employe;
+
+select last_name
+from employe
+where char_length(last_name)=6;
+
+select last_name from employe 
+where last_name like '__e%';
+select distinct job_id from  employe;
